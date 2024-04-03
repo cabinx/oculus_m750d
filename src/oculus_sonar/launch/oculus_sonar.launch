@@ -1,0 +1,20 @@
+<launch>
+<!--Launch file for the oculus_sonar node. Runs the main node + rqt
+     reconfig server.-->
+
+	<!--IP and Port for the Oculus-->
+	<!--<param name="OCULUS_IP" type="str" value="168.254.37.96" />-->
+    <!--<param name="OCULUS_IP" type="str" value="192.168.1.112" />-->
+
+	<!--Oculus main node-->
+    <node pkg="oculus_sonar" type="oculus_sonar_node.py" name="sonar_imager" output="screen">
+       <param name="tcp_ip" value="192.168.1.112" />
+    </node>
+
+	<!--RQT Dynamic Reconfigure GUI-->
+    <!--<node pkg="rqt_reconfigure" type="rqt_reconfigure" name="dynamic_reconfigure_gui" output="screen"/>-->
+
+    <!--RViz-->
+      <!--<node type="rviz" name="rviz" pkg="rviz" args="-d $(find oculus_sonar)/cfg/sonar_viz.rviz" />-->
+
+</launch>
